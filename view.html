@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="sidebar">
+
+       <header>FEATURES</header>
+       <nav class="sidebar-nav">
+           <a href="index.html" class="sidebar-nav-item">Dashboard</a>
+        <a href="ticket.html" class="sidebar-nav-item">Raise a ticket</a>
+
+
+        <a href="#"  class="sidebar-nav-item">View Tickets</a>
+
+
+        <a href="Project.html" class="sidebar-nav-item">Edit ticket</a>
+
+
+        <a href="Talks.html" class="sidebar-nav-item">About</a>
+    </nav>
+   </div>
+
+<section>
+    <div id="tab">
+        <table class="table" id="tabel1">
+      <tr>
+          <thead>
+          <th>Id</th>
+        <th>Requester-id</th>
+        <th>Subject</th>
+          <th>Status</th>
+          <th>Priority</th>
+        </thead>
+      </tr>
+</table>
+    </div>
+
+
+    </section>
+
+<script>
+fetch("https://anilkumar08071996.freshdesk.com/api/v2/tickets", {
+    headers: {
+        "Authorization": "Basic " + btoa("bD9BVkWxUeyGp6kZ9xT2" + ":" + "x"),
+    },
+    })
+.then((res)=> {return res.json()})
+.then((el)=>{
+var a=[]
+a=el;
+if(a.length>0){
+var tb1=document.getElementById("tabel1");
+console.log(a);
+var sta={
+2:"Open",
+3:"Pending",
+4:"Resolved",
+5:"closed"
+};
+var pri={
+1:"Low",
+2:"Medium",
+3:"High",
+4:"Urgent"
+};
+for(var i=0;i<a.length;i++){
+var row1=tb1.insertRow();
+var cel1=row1.insertCell(0);
+var cel2=row1.insertCell(1);
+var cel3=row1.insertCell(2);
+var cel4=row1.insertCell(3);
+var cel5=row1.insertCell(4);
+cel1.innerHTML=a[i].id;
+cel2.innerHTML=a[i].requester_id;
+cel3.innerHTML=a[i].subject;
+cel4.innerHTML=sta[a[i].status];
+cel5.innerHTML=pri[a[i].priority];
+}
+
+}
+else{
+alert("No tickets to display");
+
+}
+})
+
+
+</script>
+</body>
