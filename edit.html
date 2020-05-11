@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="sidebar">
+
+       <header>FEATURES</header>
+       <nav class="sidebar-nav">
+           <a href="index.html" class="sidebar-nav-item">Dashboard</a>
+        <a href="ticket.html" class="sidebar-nav-item">Raise a ticket</a>
+
+
+        <a href="view.html"  class="sidebar-nav-item">View Tickets</a>
+
+
+        <a href="#" class="sidebar-nav-item">Edit ticket</a>
+
+    </nav>
+   </div>
+<section>
+
+    <div class="head">
+        <strong>Note:please check the id in view page and proceed for the below task to avoid wrong updating</strong>
+
+    </div>
+<div>
+  <div class="col-sm-5 mar">
+      <strong>You can change the status of ticket here</strong>
+
+                        <input type="number" class="form-control" id="idtic1" placeholder="Enter the id of the ticket">
+
+
+                                <select id="status1" class="form-control">
+                                    <option value=2>open</option>
+                                    <option value=3>Pending</option>
+                                    <option value=4>Resolved</option>
+                                    <option value=5>Closed</option>
+                            </select>
+      <button type="button"  class="submit" id="btn"onclick="data()">Submit</button>
+
+  </div>
+  <div class="col-sm-5 mar">
+      <strong>You can change the Priority of ticket here</strong>
+
+                        <input type="number" class="form-control wid" id="idtic1" placeholder="Enter the id of the ticket">
+
+
+                                <select id="priority1" class="form-control">
+                                    <option value=1>Low</option>
+                                    <option value=2>Medium</option>
+                                    <option value=3>High</option>
+                                    <option value=4>Urgent</option>
+                            </select>
+      <button type="button" id="btn" class="submit" onclick="data()">Submit</button>
+  </div>
+  <div class="col-sm-5 mar">
+      <strong>You can change the description of ticket here</strong>
+
+                        <input type="number" class="form-control" id="idtic1" placeholder="Enter the id of the ticket">
+
+
+                        <textarea class="form-control rounded" id="Description1" rows="5"></textarea>
+      <button type="button" id="btn" class="submit" onclick="data()">Submit</button>
+
+  </div>
+    <div class="col-sm-5 mar">
+      <strong>you can delete the selected ticket here</strong>
+
+                        <input type="number" class="form-control" id="delete" placeholder="Enter the id of the ticket">
+
+      <button type="button" id="btn" class="submit" onclick="data()">Submit</button>
+
+  </div>
+    </div>
+    </div>
+</section>
+</body>

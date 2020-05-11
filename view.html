@@ -22,16 +22,14 @@
         <a href="#"  class="sidebar-nav-item">View Tickets</a>
 
 
-        <a href="Project.html" class="sidebar-nav-item">Edit ticket</a>
+        <a href="edit.html" class="sidebar-nav-item">Edit ticket</a>
 
-
-        <a href="Talks.html" class="sidebar-nav-item">About</a>
     </nav>
    </div>
 
 <section>
     <div id="tab">
-        <table class="table" id="tabel1">
+        <table class="table table-striped" id="tabel1">
       <tr>
           <thead>
           <th>Id</th>
@@ -92,6 +90,9 @@ alert("No tickets to display");
 
 }
 })
+.catch(error=>{
+alert(`facing some issued please try again issue is ${error}`);
+});
 
 
 </script>
