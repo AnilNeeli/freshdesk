@@ -72,6 +72,7 @@
 <script>
 
 async function data(){
+
      let sub=document.getElementById("subject").value;
       let sta=parseInt(document.getElementById("status").value);
       let pri=parseInt(document.getElementById("priority").value);
@@ -88,7 +89,13 @@ headers: {
     },
     body: JSON.stringify({requester_id:63002373798,status:sta,subject:sub,description:des,priority:pri})
 })
+if(response.ok){
 alert("ticket submitted successfully");
+}
+else
+{
+alert(`something went wrong  the reason is ${response.status}`);
+}
 document.getElementById("subject").value="";
 document.getElementById("Description").value="";
 document.getElementById("RequestId").value=null
